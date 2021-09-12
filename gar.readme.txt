@@ -1,0 +1,14 @@
+(1) Создать пустую БД, импортировать gar.sql
+(2) Изменить параметры area/iconf.php
+    - GC_DB_MySQLi_Host
+    - GC_DB_MySQLi_User
+    - GC_DB_MySQLi_Pass
+    - GC_DB_MySQLi_Base
+(3) Изменить путь к директории с .zip архивом БД ГАР в gar.php (не надо распаковывать архив)
+    - ScanDir
+(4) При необоходимости настроить регионы
+    - Regions
+(5) Внимательно посмотреть файл gar_process.bat, поправить пути
+    Используется https://ospanel.io , распакована в Z:\WS\
+!!! RunIt !!!
+(6) При необоходимости - gar_export.bat
