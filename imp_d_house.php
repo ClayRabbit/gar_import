@@ -37,6 +37,8 @@ class imp_d_house extends \Area\Worker {
         }
         //
         $list = [];
+        if (GAR::isRemoteZip()) $Z = new \UnzipHttpWrapper();
+        else
         $Z = new \ZipArchive();
         $Z->open($ZIPFile=GARFn::ZIPFile());
         foreach ( GAR::Regions as $region ){
@@ -64,6 +66,8 @@ class imp_d_house extends \Area\Worker {
             if ( file_exists($filename) )
                 unlink($filename);
             $this->log('Extract: '.$archive_filename.' ...');
+            if (GAR::isRemoteZip()) $Z->extract($archive_filename);
+            else
             exec('7za.exe e "'.$ZIPFile.'" "'.$archive_filename.'"',$outputNull);
             if ( !file_exists($filename) ) {
                 GARFn::lockWrite($this->workerID,__LINE__,'Extract error for '.$archive_filename);

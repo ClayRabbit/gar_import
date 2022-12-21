@@ -15,6 +15,8 @@ class imp_a_check extends \Area\Worker {
             GARFn::lockWrite($this->workerID,__LINE__,'Wrong path or GAR ZIP archive not found in '.GAR::ScanDir);
             return $this->setResult(__LINE__);
         }
+        if (GAR::isRemoteZip()) $Z = new \UnzipHttpWrapper();
+        else
         $Z = new \ZipArchive();
         $Z->open($zipFile);
         $ZRegions = [];

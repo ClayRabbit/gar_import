@@ -5,6 +5,7 @@ class GARFn {
     const bugFile = 'gar.bug';
     private const lockFile = 'gar.lock';
     static function ZIPFile(){
+        if (GAR::isRemoteZip()) return GAR::ScanDir;
         if ( !is_dir(GAR::ScanDir) )
             return false;
         $l = [];
