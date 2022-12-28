@@ -109,11 +109,15 @@ class imp_d_house extends \Area\Worker {
                     if ( $HOUSETYPE && !in_array($HOUSETYPE,GAR::HouseTypes) )
                         continue;
                     $ADDTYPE1 = intval(GARFn::rawXML_extract( $data[0] , 'ADDTYPE1' ));
+                    /*
                     if ( $ADDTYPE1 && !in_array($ADDTYPE1,GAR::HouseTypes) )
                         continue;
+                    */
                     $ADDTYPE2 = intval(GARFn::rawXML_extract( $data[0] , 'ADDTYPE2' ));
+                    /*
                     if ( $ADDTYPE2 && !in_array($ADDTYPE2,GAR::HouseTypes) )
                         continue;
+                    */
                     $this->db->mkInsert($table_house,[
                         'id' => $AInc++,
                         'OBJECTID' => GARFn::rawXML_extract($data[0],'OBJECTID'),
