@@ -1,6 +1,7 @@
 <?php
 class GAR {
-    const ScanDir = 'https://fias-file.nalog.ru/downloads/2022.12.20/gar_xml.zip';
+    const ScanDir = 'Y:/Jobs-DB/DB GAR/';
+    #const ScanDir = 'https://fias-file.nalog.ru/downloads/2022.12.20/gar_xml.zip';
     const Regions = [     '01','02','03','04','05','06','07','08','09',
                      '10','11','12','13','14','15','16','17','18','19',
                      '20','21','22','23','24','25','26','27','28','29',
